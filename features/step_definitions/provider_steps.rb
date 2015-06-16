@@ -1,5 +1,9 @@
 Given(/^no Providers exist$/) do
+<<<<<<< HEAD
   expect(Provider.count).to eq(0)
+=======
+ Provider.delete_all
+>>>>>>> uses cucumber to do and pass tests
 end
 
 When(/^I am on the registration page$/) do
@@ -8,8 +12,13 @@ end
 
 When(/^I complete the required fields$/) do
   fill_in 'Name', with: 'Dave'
+<<<<<<< HEAD
   fill_in 'Address', with: '10 Pie Lane'
   fill_in 'Postcode', with: 'RG2 9FL'
+=======
+  fill_in 'Address', with: '10 pie lane'
+  fill_in 'Postcode', with: 'RG2  9FL'
+>>>>>>> uses cucumber to do and pass tests
   fill_in 'About me', with: 'I am the best!'
   fill_in 'Paypal email', with: 'ben@ben.com'
   check 'Accepted terms'
