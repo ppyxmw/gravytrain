@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150616141531) do
-=======
-ActiveRecord::Schema.define(version: 20150616131814) do
->>>>>>> basica creation of providers
-=======
 ActiveRecord::Schema.define(version: 20150616141906) do
->>>>>>> validates acceptabce of terms
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,19 +22,8 @@ ActiveRecord::Schema.define(version: 20150616141906) do
     t.string   "postcode"
     t.text     "about_me"
     t.string   "paypal_email"
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-=======
-    t.boolean  "accepted_terms"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
->>>>>>> basica creation of providers
-=======
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
->>>>>>> validates acceptabce of terms
   end
 
 end
