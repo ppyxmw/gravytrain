@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 <<<<<<< HEAD
+<<<<<<< HEAD
   resources :providers, only: [:new, :create, :show]
 =======
   # The priority is based upon order of creation: first created -> highest priority.
@@ -57,4 +58,7 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 >>>>>>> initial rails app
+=======
+  resources :providers, only: [:new, :create, :show]
+>>>>>>> basica creation of providers
 end
