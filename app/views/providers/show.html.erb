@@ -1,4 +1,10 @@
-<h1>Here your Profile is:</h1>
-
-<%= (@provider)%>
-
+<header class="header">
+<h3 class="heading">Your profile has been saved as:</h3>
+</header>
+<div class="content">
+<p><strong>Name:</strong><%= @provider.name %></p>
+<p><strong>Address:</strong><%= @provider.address %></p>
+<p><strong>Postcode:</strong><%= @provider.postcode %></p>
+<p><strong>About you:</strong><%= @provider.about_me %></p>
+<p><strong>Paypal email:</strong> <%= @provider.paypal_email %></p>
+</div>
