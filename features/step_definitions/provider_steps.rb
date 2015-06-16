@@ -27,7 +27,6 @@ When(/^I complete the required fields$/) do
   fill_in 'Paypal email', with: 'ben@ben.com'
   check 'Accepted terms'
 
-  save_and_open_page
 end
 
 When(/^I submit my information$/) do
@@ -40,4 +39,16 @@ end
 
 Then(/^I see a confirmation message$/) do
   expect(page).to have_content('Done!')
+end
+
+When(/^I have not accepted the T&Cs$/) do
+  uncheck 'Accepted terms'
+end
+
+Then(/^A Provider account is not created$/) do
+  expect(Provider.count).to eq(0)
+end
+
+Then(/^I see an error message$/) do
+  expect(page).to have_content('Accepted terms must be accepted')
 end
