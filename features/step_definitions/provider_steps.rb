@@ -39,9 +39,13 @@ Then(/^I see an error message$/) do
   expect(page).to have_content('Accepted terms must be accepted')
 end
 
-Given(/^a Provider exists$/) do
-  @provider = Provider.create!(name: 'jojo', address: '5 Yolo lane', postcode: 'mk44 3nu', about_me: 'Nasty', paypal_email: 'big@daddy.com')
-
+Given(/^a Provider registers$/) do
+  @provider = Provider.create!(name: 'jojo',
+    address: '5 Yolo lane',
+    postcode: 'mk44 3nu',
+    about_me: 'Nasty',
+    paypal_email: 'big@daddy.com'
+    )
 end
 
 When(/^I view the Provider$/) do

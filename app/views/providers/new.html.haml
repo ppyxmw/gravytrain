@@ -1,0 +1,71 @@
+%h1.header Provider Registration
+
+=form_for (@provider) do |f|
+  -if @provider.errors.any?
+    %ul
+    -@provider.errors.full_messages.each do |error|
+      %li=error
+
+  %div
+    =f.label(:name)
+    =f.text_field(:name)
+  %div
+    =f.label(:address)
+    =f.text_area(:address)
+  %div
+    =f.label(:postcode)
+    =f.text_field(:postcode)
+  %div
+    =f.label(:about_me)
+    =f.text_area(:about_me)
+  %div
+    =f.label(:paypal_email)
+    =f.email_field(:paypal_email)
+  %div
+    =f.label(:accepted_terms)
+    =f.check_box(:accepted_terms)
+
+  =f.submit
+
+
+/ Below is the equivalent erb.
+
+/ <h1 class ="header">Provider Registration</h1>
+
+/ <%= form_for(@provider) do |f| %>
+
+/   <% if @provider.errors.any? %>
+/     <ul>
+/     <% @provider.errors.full_messages.each do |error| %>
+/       <li><%= error %></li>
+/     <% end %>
+/     </ul>
+/   <% end %>
+/ <div class="content">
+/   <div>
+/     <%= f.label(:name) %>
+/     <%= f.text_field(:name) %>
+/   </div>
+/   <div>
+/     <%= f.label(:address) %>
+/     <%= f.text_area(:address) %>
+/   </div>
+/   <div>
+/     <%= f.label(:postcode) %>
+/     <%= f.text_field(:postcode) %>
+/   </div>
+/   <div>
+/     <%= f.label(:about_me) %>
+/     <%= f.text_area(:about_me) %>
+/   </div>
+/   <div>
+/     <%= f.label(:paypal_email) %>
+/     <%= f.email_field(:paypal_email) %>
+/   </div>
+/   <div>
+/     <%= f.label(:accepted_terms) %>
+/     <%= f.check_box(:accepted_terms) %>
+/   </div>
+/   <%= f.submit %>
+/ <% end %>
+/ </div>
