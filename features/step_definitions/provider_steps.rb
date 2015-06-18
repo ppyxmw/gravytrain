@@ -27,6 +27,10 @@ Then(/^I see a confirmation message$/) do
   expect(page).to have_content('has been saved')
 end
 
+Then(/^I recieve a confirmation email$/) do
+  expect(ActionMailer::Base.deliveries).not_to be_empty
+end
+
 When(/^I have not accepted the T&Cs$/) do
   uncheck 'Accepted terms'
 end

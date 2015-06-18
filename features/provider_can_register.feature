@@ -10,6 +10,7 @@ Feature: Provider can register
     And I submit my information
     Then my Provider account is created
     And I see a confirmation message
+    And I recieve a confirmation email
 
   Scenario: The T&Cs are not checked
     Given no Providers exist

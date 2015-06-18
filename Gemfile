@@ -45,7 +45,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'launchy'
-  gem 'rspec-pride', group: 'test'
   gem 'guard-rspec', require: false
   gem 'terminal-notifier-guard'
 end
