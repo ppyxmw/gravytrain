@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Provider do
   describe 'validation' do
     let(:provider) do
-      provider = Provider.new(
+      provider = Provider.create(
         name: 'Ben',
         address: '10',
         postcode: 'RM1',
@@ -62,6 +62,18 @@ RSpec.describe Provider do
       provider.paypal_email = 'yoloyoyoyoy.com'
 
       expect(provider).to_not be_valid
+    end
+
+    it 'clicking the confirm link confirms the account' do
+
+binding.pry
+       visit confirm_provider_path(provider)
+
+      expect(provider).to be_confirmed
+    end
+
+    it 'redirects to the Provider`s confirmed profile' do
+      skip
     end
 
   end

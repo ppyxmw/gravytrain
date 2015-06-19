@@ -27,6 +27,10 @@ Then(/^I see a confirmation message$/) do
   expect(page).to have_content('has been saved')
 end
 
+Then(/^the account stays unconfirmed$/) do
+  expect(Provider.first).to_not be_confirmed
+end
+
 Then(/^I recieve a confirmation email$/) do
   expect(ActionMailer::Base.deliveries).not_to be_empty
 end
@@ -62,4 +66,16 @@ Then(/^I see their details$/) do
   expect(page).to have_content('mk44 3nu')
   expect(page).to have_content('Nasty')
   expect(page).to have_content('big@daddy.com')
+end
+
+When(/^I follow the link within my confirmation email$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^my account is confirmed$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I am directed to my profile$/) do
+  pending # express the regexp above with the code you wish you had
 end

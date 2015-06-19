@@ -19,6 +19,14 @@ class ProvidersController < ApplicationController
     render :show
   end
 
+  def confirm
+    @provider = Provider.find(params[:id])
+    @provider.confirmed = true
+    @provider.save!
+    redirect :show
+  end
+
+
   private
 
   def provider_params
