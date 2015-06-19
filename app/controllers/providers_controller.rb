@@ -7,6 +7,7 @@ class ProvidersController < ApplicationController
     @provider = Provider.create(provider_params)
 
     if @provider.valid?
+      ProvidersMailer.register(@provider).deliver_later
       redirect_to @provider
     else
       render :new
@@ -17,6 +18,14 @@ class ProvidersController < ApplicationController
     @provider = Provider.find(params[:id])
     render :show
   end
+
+  def confirm
+    @provider = Provider.find(params[:id])
+    @provider.confirmed = true
+    @provider.save!
+    redirect :show
+  end
+
 
   private
 
