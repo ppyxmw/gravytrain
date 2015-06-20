@@ -23,9 +23,8 @@ class ProvidersController < ApplicationController
     @provider = Provider.find(params[:id])
     @provider.confirmed = true
     @provider.save!
-    redirect :show
+    render :show
   end
-
 
   private
 

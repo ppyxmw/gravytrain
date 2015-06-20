@@ -60,7 +60,8 @@ end
 ### I could not simulate visiting the capybara email page :(###
 
 When(/^I follow the link within my confirmation email$/) do
-  visit provider_path(@provider)
+  visit confirm_provider_path(@provider)
+
 end
 
 Then(/^my account is confirmed$/) do

@@ -22,13 +22,7 @@ RSpec.describe ProvidersMailer do
     end
 
     it 'has a confirmation link' do
-      expect(subject.body.parts.first.decoded).to include('Please click here to confirm your account.')
+      expect(subject.body.parts.first.decoded).to include('Please click the link to verify your account.')
     end
-
-
-
-
-
-
   end
 end

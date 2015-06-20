@@ -67,12 +67,7 @@ RSpec.describe Provider do
     it 'clicking the confirm link confirms the account' do
        visit confirm_provider_path(provider)
 
-      expect(provider).to be_confirmed
+       expect(provider.reload).to be_confirmed
     end
-
-    it 'redirects to the Provider`s confirmed profile' do
-      skip
-    end
-
   end
 end
