@@ -18,15 +18,3 @@ Then(/^I see their details$/) do
   expect(page).to have_content('Nasty')
   expect(page).to have_content('big@daddy.com')
 end
-
-When(/^I follow the link within my confirmation email$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^my account is confirmed$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I am directed to my profile$/) do
-  pending # express the regexp above with the code you wish you had
-end

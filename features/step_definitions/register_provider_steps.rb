@@ -55,4 +55,18 @@ Then(/^I see an error message$/) do
   expect(page).to have_content('Accepted terms must be accepted')
 end
 
+# Scenario: Confirming my Provider account
+# Given a Provider registers - DONE in show_provider_steps
+
+When(/^I follow the link within my confirmation email$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^my account is confirmed$/) do
+  pending # express the regexp above with the code you wish you had
+end
+
+Then(/^I am directed to my profile$/) do
+  pending # express the regexp above with the code you wish you had
+end
 
