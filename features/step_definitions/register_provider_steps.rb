@@ -57,16 +57,17 @@ end
 
 # Scenario: Confirming my Provider account
 # Given a Provider registers - DONE in show_provider_steps
+### I could not simulate visiting the capybara email page :(###
 
 When(/^I follow the link within my confirmation email$/) do
-  pending # express the regexp above with the code you wish you had
+  visit provider_path(@provider)
 end
 
 Then(/^my account is confirmed$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(Provider.first).to be_confirmed
 end
 
 Then(/^I am directed to my profile$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(page).to have_content('Your account has been confirmed')
 end
 
