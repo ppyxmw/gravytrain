@@ -65,8 +65,6 @@ RSpec.describe Provider do
     end
 
     it 'clicking the confirm link confirms the account' do
-
-binding.pry
        visit confirm_provider_path(provider)
 
       expect(provider).to be_confirmed

@@ -16,6 +16,7 @@ Feature: Provider can register
   Scenario: The T&Cs are not checked
     Given no Providers exist
     When I am on the registration page
+    And I complete the required fields
     And I have not accepted the T&Cs
     And I submit my information
     Then A Provider account is not created

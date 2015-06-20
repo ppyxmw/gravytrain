@@ -1,5 +1,15 @@
 <header class="header">
+
+<% if @provider.confirmed? %>
+
+<h3 class="heading">Your account has been confirmed</h3>
+
+<% else %>
+
 <h3 class="heading">Please check your email for a confirmation link to activate your account:</h3>
+
+<% end %>
+
 </header>
 <div class="content">
 <p><strong>Name:</strong><%= @provider.name %></p>
@@ -7,4 +17,6 @@
 <p><strong>Postcode:</strong><%= @provider.postcode %></p>
 <p><strong>About you:</strong><%= @provider.about_me %></p>
 <p><strong>Paypal email:</strong> <%= @provider.paypal_email %></p>
+</div>
+<p><strong>Confirmed:</strong> <%= @provider.confirmed %></p>
 </div>

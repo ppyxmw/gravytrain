@@ -1,3 +1,4 @@
+# Scenario: A Provider account is created
 Given(/^no Providers exist$/) do
   expect(Provider.count).to eq(0)
 end
@@ -24,7 +25,7 @@ Then(/^my Provider account is created$/) do
 end
 
 Then(/^I see a confirmation message$/) do
-  expect(page).to have_content('has been saved')
+  expect(page).to have_content('check your email')
 end
 
 Then(/^the account stays unconfirmed$/) do
@@ -35,9 +36,16 @@ Then(/^I recieve a confirmation email$/) do
   expect(ActionMailer::Base.deliveries).not_to be_empty
 end
 
+# Scenario: The T&Cs are not checked.
+# Given no Providers exist - DONE
+# When I am on the registration page - DONE
+# And I complete the required fields - DONE
+
 When(/^I have not accepted the T&Cs$/) do
   uncheck 'Accepted terms'
 end
+
+# And I submit my information - DONE
 
 Then(/^A Provider account is not created$/) do
   expect(Provider.count).to eq(0)
@@ -47,35 +55,4 @@ Then(/^I see an error message$/) do
   expect(page).to have_content('Accepted terms must be accepted')
 end
 
-Given(/^a Provider registers$/) do
-  @provider = Provider.create!(name: 'jojo',
-    address: '5 Yolo lane',
-    postcode: 'mk44 3nu',
-    about_me: 'Nasty',
-    paypal_email: 'big@daddy.com'
-    )
-end
 
-When(/^I view the Provider$/) do
-  visit provider_path(@provider)
-end
-
-Then(/^I see their details$/) do
-  expect(page).to have_content('jojo')
-  expect(page).to have_content('5 Yolo lane')
-  expect(page).to have_content('mk44 3nu')
-  expect(page).to have_content('Nasty')
-  expect(page).to have_content('big@daddy.com')
-end
-
-When(/^I follow the link within my confirmation email$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^my account is confirmed$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I am directed to my profile$/) do
-  pending # express the regexp above with the code you wish you had
-end
