@@ -10,7 +10,7 @@ RSpec.describe Provider do
         about_me: 'Stuff',
         paypal_email: 'me@me.com',
         accepted_terms: '1'
-      )
+        )
     end
 
     it 'is valid with valid attributes' do
@@ -49,11 +49,11 @@ RSpec.describe Provider do
 
     it 'expects the uniqueness of email' do
       provider2 = Provider.create!(name: 'Dave',
-      address: '10 Pie Lane',
-      postcode: 'RG2 9FL',
-      about_me: 'I am the best!',
-      paypal_email: 'me@me.com'
-    )
+        address: '10 Pie Lane',
+        postcode: 'RG2 9FL',
+        about_me: 'I am the best!',
+        paypal_email: 'me@me.com'
+        )
 
       expect(provider).to_not be_valid
     end
@@ -65,9 +65,11 @@ RSpec.describe Provider do
     end
 
     it 'clicking the confirm link confirms the account' do
-       visit confirm_provider_path(provider)
 
-       expect(provider.reload).to be_confirmed
+      @provider = provider
+      visit confirm_provider_url(@provider, token: @provider.token)
+
+      expect(@provider.reload.confirmed).to eq(true)
     end
   end
 end

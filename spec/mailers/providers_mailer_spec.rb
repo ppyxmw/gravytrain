@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ProvidersMailer do
   describe '.register' do
-    let(:provider) { Provider.new(name: 'Dave', paypal_email: 'ben@ben.com') }
+    let(:provider) { Provider.create(name: 'Dave', address: '5 Yolo lane', paypal_email: 'ben@ben.com', about_me: 'ladder', accepted_terms: '1', postcode: 'CB4 1JN') }
 
     subject { ProvidersMailer.register(provider).deliver_now }
 

@@ -48,4 +48,5 @@ group :development, :test do
   gem 'letter_opener'
   gem 'guard-rspec', require: false
   gem 'terminal-notifier-guard'
+  gem 'better_errors'
 end

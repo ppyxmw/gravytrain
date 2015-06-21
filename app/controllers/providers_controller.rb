@@ -21,9 +21,13 @@ class ProvidersController < ApplicationController
 
   def confirm
     @provider = Provider.find(params[:id])
-    @provider.confirmed = true
-    @provider.save!
-    render :show
+    if @provider.token == params[:token]
+      @provider.confirmed = true
+      @provider.save!
+      render :show
+    else
+      render :show
+    end
   end
 
   private

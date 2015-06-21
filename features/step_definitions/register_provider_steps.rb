@@ -60,7 +60,7 @@ end
 ### I could not simulate visiting the capybara email page :(###
 
 When(/^I follow the link within my confirmation email$/) do
-  visit confirm_provider_path(@provider)
+  visit confirm_provider_path(@provider, token: @provider.token)
 
 end
 
